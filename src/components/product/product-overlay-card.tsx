@@ -15,7 +15,7 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
   product,
   index,
   variant = 'left',
-  imgLoading = 'lazy',
+  // imgLoading = 'lazy',
 }) => {
   // const size =
   //   (variant === 'center' && index === 1) || (variant === 'left' && index === 0)
