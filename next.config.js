@@ -8,4 +8,7 @@ module.exports = withPWA({
     runtimeCaching,
   },
   i18n,
+  images: {
+    domains: ['veggie-bucket-2.s3.eu-central-1.amazonaws.com'],
+  },
 });
