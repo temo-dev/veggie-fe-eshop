@@ -20,12 +20,12 @@ const Layout: React.FC = ({ children }) => {
 						content: "width=device-width, initial-scale=1.0",
 					},
 				]}
-				title="ChawkBazar React - React Next E-commerce Template"
+				title="Veggie Asian Food React - React Next E-commerce Template"
 				description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
 				canonical="https://chawkbazar.vercel.app/"
 				openGraph={{
 					url: "https://chawkbazar.vercel.app",
-					title: "ChawkBazar React - React Next E-commerce Template",
+					title: "Veggie Asian Food React - React Next E-commerce Template",
 					description:
 						"Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.",
 					images: [

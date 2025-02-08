@@ -1,24 +1,20 @@
-import { ILFlag } from "@components/icons/ILFlag";
-import { SAFlag } from "@components/icons/SAFlag";
-import { CNFlag } from "@components/icons/CNFlag";
 import { USFlag } from "@components/icons/USFlag";
 import { DEFlag } from "@components/icons/DEFlag";
-import { ESFlag } from "@components/icons/ESFlag";
 export const siteSettings = {
-	name: "ChawkBazar",
+	name: "Veggie Asian Food",
 	description:
-		"Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.",
+		"Import & Export Fresh Vegetables, Herbs & Fruits and a leading grocery and food service distributor from Asia and Europe",
 	author: {
-		name: "RedQ, Inc.",
-		websiteUrl: "https://redq.io",
+		name: "hatsolution",
+		websiteUrl: "https://hatss.eu",
 		address: "",
 	},
 	logo: {
-		url: "/assets/images/logo.svg",
-		alt: "ChawkBazar",
+		url: "/assets/logo/logo.webp",
+		alt: "Veggie Asian Food",
 		href: "/",
 		width: 95,
-		height: 30,
+		height: 40,
 	},
 	defaultLanguage: "en",
 	currencyCode: "USD",
@@ -1561,18 +1557,6 @@ export const siteSettings = {
 		],
 		languageMenu: [
 			{
-				id: "ar",
-				name: "عربى - AR",
-				value: "ar",
-				icon: <SAFlag width="20px" height="15px" />,
-			},
-			{
-				id: "zh",
-				name: "中国人 - ZH",
-				value: "zh",
-				icon: <CNFlag width="20px" height="15px" />,
-			},
-			{
 				id: "en",
 				name: "English - EN",
 				value: "en",
@@ -1583,18 +1567,6 @@ export const siteSettings = {
 				name: "Deutsch - DE",
 				value: "de",
 				icon: <DEFlag width="20px" height="15px" />,
-			},
-			{
-				id: "he",
-				name: "rעברית - HE",
-				value: "he",
-				icon: <ILFlag width="20px" height="15px" />,
-			},
-			{
-				id: "es",
-				name: "Español - ES",
-				value: "es",
-				icon: <ESFlag width="20px" height="15px" />,
 			},
 		],
 	},
