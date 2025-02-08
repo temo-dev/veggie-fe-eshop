@@ -25,6 +25,7 @@ import "@styles/swiper-carousel.css";
 import "@styles/custom-plugins.css";
 import "@styles/tailwind.css";
 import { getDirection } from "@utils/get-direction";
+import { MantineProvider } from "@mantine/core";
 
 function handleExitComplete() {
 	if (typeof window !== "undefined") {
@@ -50,6 +51,16 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 		<AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
 			<QueryClientProvider client={queryClientRef.current}>
 				<Hydrate state={pageProps.dehydratedState}>
+				<MantineProvider
+					withGlobalStyles
+					withNormalizeCSS
+					theme={{
+						/** Tùy chỉnh các thông số theme tại đây (nếu cần) */
+						colorScheme: 'light', // hoặc 'dark'
+						/** Ví dụ: custom primary color */
+						primaryColor: 'blue',
+					}}
+					>
 					<ManagedUIContext>
 						<Layout pageProps={pageProps}>
 							<DefaultSeo />
@@ -59,6 +70,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 						<ManagedModal />
 						<ManagedDrawer />
 					</ManagedUIContext>
+				</MantineProvider>
 				</Hydrate>
 				{/* <ReactQueryDevtools /> */}
 			</QueryClientProvider>

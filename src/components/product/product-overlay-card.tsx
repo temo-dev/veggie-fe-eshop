@@ -1,7 +1,8 @@
-import Image from 'next/image';
+
 import { useUI } from '@contexts/ui.context';
 import usePrice from '@framework/product/use-price';
 import { Product } from '@framework/types';
+import { Image } from '@mantine/core';
 
 interface ProductProps {
   product: Product;
@@ -78,7 +79,7 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
           }
           width={size}
           height={size}
-          loading={imgLoading}
+          // loading={imgLoading}
           alt={product?.name || 'Product Image'}
           className="transition duration-500 ease-in-out transform group-hover:scale-110"
         />
