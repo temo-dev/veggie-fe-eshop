@@ -1,9 +1,8 @@
 import Link from "@components/ui/link";
-import Image from "next/image";
 import Text from "@components/ui/text";
 import { FaLink } from "react-icons/fa";
 import { LinkProps } from "next/link";
-import { useTranslation } from "next-i18next";
+import { Image } from '@mantine/core';
 
 interface Props {
 	item: any;
@@ -16,16 +15,10 @@ interface Props {
 const Card: React.FC<Props> = ({
 	item,
 	variant = "circle",
-	size = "small",
 	effectActive = false,
 	href,
 }) => {
-	const { name, image } = item ?? {};
-	const imageSize: any =
-		(size === "small" && 180) || (size === "medium" && 198);
-
-	const placeholderImage = `/assets/placeholder/card-${size}.svg`;
-	const { t } = useTranslation("common");
+	const { name } = item ?? {};
 	return (
 		<Link
 			href={href}
@@ -36,17 +29,8 @@ const Card: React.FC<Props> = ({
 					variant === "rounded" ? "rounded-md" : "rounded-full"
 				}`}
 			>
-				<div className="flex">
-					<Image
-						src={image?.original ?? placeholderImage}
-						alt={name || t("text-card-thumbnail")}
-						width={imageSize}
-						height={imageSize}
-						quality={100}
-						className={`object-cover bg-gray-300 ${
-							variant === "rounded" ? "rounded-md" : "rounded-full"
-						}`}
-					/>
+				<div className="flex drop-shadow-xl">
+					<Image maw={240} mx="auto" radius="md" src={item.image_url} alt="Random image" caption={item.category_name_vn.toUpperCase()}/>
 				</div>
 				{effectActive === true && (
 					<>

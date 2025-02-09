@@ -5,7 +5,6 @@ import CardLoader from '@components/ui/loaders/card-loader';
 import CardRoundedLoader from '@components/ui/loaders/card-rounded-loader';
 import { useCategoriesQuery } from '@framework/category/get-all-categories';
 import { ROUTES } from '@utils/routes';
-import Alert from '@components/ui/alert';
 import { SwiperSlide } from 'swiper/react';
 
 interface CategoriesProps {
@@ -73,16 +72,10 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
   sectionHeading,
   type = 'circle',
 }) => {
-  const { data, isLoading, error } = useCategoriesQuery({
-    limit: 10,
-  });
-
+  const { data, isLoading } = useCategoriesQuery();
   return (
     <div className={className}>
       <SectionHeader sectionHeading={sectionHeading} />
-      {error ? (
-        <Alert message={error?.message} />
-      ) : (
         <Carousel
           breakpoints={type === 'rounded' ? breakpoints : breakpointsCircle}
           buttonClassName="-mt-8 md:-mt-10"
@@ -102,11 +95,11 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
                   </SwiperSlide>
                 );
               })
-            : data?.categories?.data?.map((category) => (
+            : data?.map((category:any) => (
                 <SwiperSlide key={`category--key-${category.id}`}>
                   <Card
                     item={category}
-                    href={`${ROUTES.CATEGORY}/${category.slug}`}
+                    href={`${ROUTES.CATEGORY}/${category.category_id}`}
                     variant={type}
                     effectActive={true}
                     size={type === 'rounded' ? 'medium' : 'small'}
@@ -114,7 +107,6 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
                 </SwiperSlide>
               ))}
         </Carousel>
-      )}
     </div>
   );
 };

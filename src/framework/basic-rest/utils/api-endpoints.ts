@@ -7,7 +7,6 @@ export const API_ENDPOINTS = {
   FEATURED_CATEGORIES: "/featured_categories.json",
   COLLECTIONS: "/collections.json",
   BRANDS: "/brands.json",
-  PRODUCTS: "/products.json",
   FEATURED_PRODUCTS: "/featured_products.json",
   TOP_SELLER_PRODUCTS: "/products_top_seller.json",
   ON_SELLING_PRODUCTS: "/products_on_selling.json",
@@ -19,4 +18,7 @@ export const API_ENDPOINTS = {
   SEARCH: "/search.json",
   ORDERS: "/orders.json",
   ORDER: "/order.json",
+  //new
+  MENU:"/v1/eshop/categories",
+  PRODUCTS: "v1/eshop/products",
 };

@@ -9,6 +9,7 @@ import { addActiveScroll } from "@utils/add-active-scroll";
 import dynamic from "next/dynamic";
 import { useTranslation } from "next-i18next";
 import LanguageSwitcher from "@components/ui/language-switcher";
+import { useCategoriesQuery } from "@framework/category/get-all-categories";
 const AuthMenu = dynamic(() => import("./auth-menu"), { ssr: false });
 const CartButton = dynamic(() => import("@components/cart/cart-button"), {
 	ssr: false,
@@ -25,6 +26,7 @@ const Header: React.FC = () => {
 		setModalView,
 		isAuthorized,
 	} = useUI();
+	const {data: categories} = useCategoriesQuery()
 	const { t } = useTranslation("common");
 	const siteHeaderRef = useRef() as DivElementRef;
 	addActiveScroll(siteHeaderRef);
@@ -60,7 +62,7 @@ const Header: React.FC = () => {
 					<Logo />
 
 					<HeaderMenu
-						data={site_header.menu}
+						data={categories}
 						className="hidden lg:flex md:ms-6 xl:ms-10"
 					/>
 

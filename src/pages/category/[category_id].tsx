@@ -1,20 +1,22 @@
 import Container from "@components/ui/container";
 import Layout from "@components/layout/layout";
-import Subscription from "@components/common/subscription";
-import { ProductGrid } from "@components/product/product-grid";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import CategoryBanner from "@containers/category-banner";
 import { GetServerSideProps } from "next";
+import SliceProduct from "@components/product/slice-product";
 
-export default function Category() {
+interface PagePros {
+	category_id: string
+}
+
+export default function Category(props:PagePros) {
+	const {category_id} = props
+	console.log('category_id',category_id)
 	return (
 		<div className="border-t-2 border-borderBottom">
 			<Container>
 				<CategoryBanner />
-				<div className="pb-16 lg:pb-20">
-					<ProductGrid className="3xl:grid-cols-6" />
-				</div>
-				<Subscription />
+				<SliceProduct/>
 			</Container>
 		</div>
 	);
@@ -22,7 +24,8 @@ export default function Category() {
 
 Category.Layout = Layout;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
+	const category_id = params?.category_id as string;
 	return {
 		props: {
 			...(await serverSideTranslations(locale!, [
@@ -31,6 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 				"menu",
 				"footer",
 			])),
+			category_id
 		},
 	};
 };

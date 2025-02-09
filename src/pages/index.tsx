@@ -66,12 +66,12 @@ export default function Home() {
     <>
       <BannerBlock data={masonryBanner} />
       <Container>
-        <ProductsFlashSaleBlock date={'2025-03-01T01:02:03'} />
+        {/* <ProductsFlashSaleBlock date={'2025-03-01T01:02:03'} /> */}
       </Container>
       <BannerSliderBlock />
       <Container>
         <CategoryBlock sectionHeading="text-shop-by-category" type="rounded" />
-        <ProductsFeatured sectionHeading="text-featured-products" />
+        {/* <ProductsFeatured sectionHeading="text-featured-products" />
         <BannerCard
           key={`banner--key${banner[0].id}`}
           banner={banner[0]}
@@ -84,11 +84,11 @@ export default function Home() {
           banner={banner[1]}
           href={`${ROUTES.COLLECTIONS}/${banner[1].slug}`}
           className="mb-12 lg:mb-14 xl:mb-16 pb-0.5 lg:pb-1 xl:pb-0"
-        />
-        <BannerWithProducts
+        /> */}
+        {/* <BannerWithProducts
           sectionHeading="text-on-selling-products"
           categorySlug="/search"
-        />
+        /> */}
         {/* <ExclusiveBlock />
         <NewArrivalsProductFeed />
         <DownloadApps />
