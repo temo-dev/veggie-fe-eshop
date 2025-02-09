@@ -20,5 +20,6 @@ export const API_ENDPOINTS = {
   ORDER: "/order.json",
   //new
   MENU:"/v1/eshop/categories",
+  PRODUCT_CATEGORY: "/v1/eshop/categories",
   PRODUCTS: "v1/eshop/products",
 };

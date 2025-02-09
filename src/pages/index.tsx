@@ -29,7 +29,6 @@ export default function Home() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js')
         .then(registration => {
-          console.log('Service Worker đăng ký thành công:', registration);
           subscribeUser(registration);
         })
         .catch(error => console.error('Lỗi đăng ký Service Worker:', error));
@@ -46,9 +45,6 @@ export default function Home() {
         userVisibleOnly: true,
         applicationServerKey: convertedVapidKey
       });
-      
-      console.log('Subscription:', subscription);
-
       // Gửi subscription đến backend (Golang) để lưu trữ
       await fetch('http://localhost:8080/v1/notification/subscribe', {
         method: 'POST',
@@ -94,7 +90,6 @@ export default function Home() {
         <DownloadApps />
         <Support />
         <Instagram /> */}
-        <Subscription className="bg-opacity-0 px-5 sm:px-16 xl:px-0 py-12 md:py-14 xl:py-16" />
       </Container>
       <Divider className="mb-0" />
     </>
